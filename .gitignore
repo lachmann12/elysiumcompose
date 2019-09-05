@@ -1,0 +1,6 @@
+.env
+.env*
+schema.sql
+docker-compose_old.yml
+.DS_Store
+launch_cluster.sh

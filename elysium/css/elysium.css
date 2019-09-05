@@ -1,0 +1,581 @@
+.Roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.Open_Sans{
+    font-family: 'Open Sans', sans-serif;
+}
+.Raleway{
+    font-family: 'Raleway', sans-serif;
+}
+.Shrikhand{
+    font-family: 'Shrikhand', sans-serif;
+}
+.Spirax{
+    font-family: 'Spirax', sans-serif;
+}
+.Slabo{
+    font-family: 'Slabo 27px', sans-serif;
+}
+.Indie{
+    font-family: 'Indie Flower', sans-serif;
+}
+.Poorstory{
+    font-family: 'Poor Story', sans-serif;
+}
+
+h1{
+    font-size: 56px;
+    -webkit-text-stroke: 1px #ff1fc2;
+   color: white;
+   text-shadow:
+       3px 3px 0 #bf3199,
+     -1px -1px 0 #bf3199,  
+      1px -1px 0 #bf3199,
+      -1px 1px 0 #bf3199,
+       1px 1px 0 #bf3199;
+}
+
+body{
+    text-align: center;
+    background-color: #fcfdd6;
+    background-image: url("../images/hexbackground.png");
+    background-repeat: repeat;
+    
+}
+
+.grid-container {
+  position: fixed;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 0px;
+  background-color: #ef1e55;
+  padding: 10px;
+  width: 100%;
+  margin:-20 auto;
+  color: #c30e3d;
+  border-radius: 0px;
+  overflow: hidden;
+  height: 100%;
+  
+  opacity: 0.9;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    perspective: 1000px;
+}
+/* Elysium the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    width: 100px;
+    height: 100px;
+}
+
+/* Elysium speed goes here */
+.flipper {
+    transition: 0.3s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.3s;
+    transform-style: preserve-3d;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*  UPDATED! front pane, placed above back */
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background: #ef1e55;
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(-180deg);
+    background: lightgreen;
+}
+
+/* 
+    Some vertical Elysium updates 
+*/
+.vertical.flip-container {
+    position: relative;
+}
+
+.vertical .back {
+    transform: rotateX(180deg);
+}
+
+.vertical.flip-container:hover .back {
+    transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front {
+    transform: rotateX(180deg);
+}
+
+.vertical.flip-container.flipped .back {
+    transform: rotateX(0deg);
+}
+
+.vertical.flip-container.flipped .front {
+    transform: rotateX(180deg);
+}
+
+.backtile{
+    font-size: 80;
+    height: 100px;
+    width: 100px;
+    
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+}
+
+#intro{
+    text-align: center;
+    padding-top: 34px;
+}
+
+a {
+    font-size: 13px;
+    font-weight: bold;
+}
+ /* unvisited link */
+}
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: hotpink;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+.introimg{
+  font-family: 'Slabo 27px', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 220px auto auto;
+  padding-top: 40px;
+}
+
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#smile{
+    padding-top: 15px;
+}
+
+#disclaimer{
+    text-align: center;
+    color: lightgrey;
+}
+
+.contentPane {
+  
+  border: 1px solid black;
+  position: absolute; // Reposition logo from the natural layout
+  
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, 0%);
+  
+  top: 20px;
+  max-width: 700px;
+  
+  width: 60%;
+  
+  z-index: 2;
+  
+  background-color: #ffffff;
+  
+  text-align: left;
+  padding: 30px;
+  
+  border-radius: 5px;
+  overflow: hidden;
+  
+ -webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+
+}
+
+#zebrapattern{
+    margin-left: -40px;
+    margin-top: -140px;
+    margin-bottom: -10px;
+}
+
+#zebrapattern2{
+    margin-left: -40px;
+    margin-top: 20px;
+    margin-bottom: -160px;
+}
+
+#letsgo{
+    position:relative;
+}
+
+.headfont{
+    margin-bottom: 16px;
+    margin-top: 16px;
+    position: absolute;
+    top: -10;
+    left: 20px;
+    font-size: 54px;
+}
+
+#memuser{
+    display: none;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+#errorflag{
+    margin-bottom: 20px;
+}
+
+#leftcontent{
+    padding: 0px;
+}
+
+#leftpane{
+    width: 700px;
+}
+
+#love{
+    position: absolute;
+    top: 12;
+    left: 120px;
+}
+
+.buttonlove{
+    position: relative;
+    opacity: 0.7;
+}
+
+#jobcreate {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 2px solid #eeeeee;
+    height: 50px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
+    background-color:  #eeeeee;
+    
+}
+
+#jobcreate:hover {
+    /* background-color: #4CAF50; Green */
+    border: 2px solid magenta;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 165px;
+    padding-top: -20px;
+}
+
+#jobcreate:active {
+    /* background-color: #4CAF50; Green */
+    background-color: magenta;
+    color: white;
+}
+
+.letsgo{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 2px solid #eeeeee;
+    height: 50px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
+    background-color:  #eeeeee;
+    color: grey;
+    width: 640px;
+    font-size: 20px;
+}
+
+.letsgo:hover {
+    /* background-color: #4CAF50; Green */
+    border: 2px solid lightgrey;
+    background-color:  #eeeeee;
+    color: black;
+}
+
+.letsgo:active {
+    /* background-color: #4CAF50; Green */
+    background-color: #1f82f1;
+    color: white;
+}
+
+#uploadbutton {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 2px solid #eeeeee;
+    height: 50px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
+    color: black;
+    
+}
+
+#uploadbutton:hover {
+    /* background-color: #4CAF50; Green */
+    border: 2px solid lightgrey;
+}
+
+#uploadbutton:active {
+    /* background-color: #4CAF50; Green */
+    background-color: lightgreen;
+    color: white;
+}
+
+#uploadform{
+    padding-top: 26px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+#prbar{
+    margin-top:30px;
+}
+
+#userfiles {
+    text-overflow: ellipsis;
+    margin-left: -14px;
+    padding: 0px;
+}
+
+#submitjob{
+    display: none;
+    
+}
+
+#file1{
+    width: 420px;
+    border-style: none;
+    padding-left: 10px;
+}
+
+#file2{
+    width: 420px;
+    border-style: none;
+    padding-left: 10px;
+}
+
+#jobstatus{
+    padding: 18px;
+    display: none;
+    z-index: 3;
+    position: absolute; // Reposition logo from the natural layout
+    left: 600px;
+    top: 20px;
+    background-color: #fff;
+    
+    border-radius: 5px;
+    overflow: hidden;
+    
+    border: 2px solid black;
+    margin-bottom: 20px;
+    
+    -webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+#fileinfo{
+    color: grey;
+    margin-bottom: 20px;
+}
+
+#question{
+    
+    font-size: 60px;
+    position: absolute;
+    background-color: #eeeeee;
+    width: 100px;
+    height: 80px;
+    z-index: 1;
+    top: 120px;
+    left: 5px;
+    border: 4px solid black;
+    border-radius: 20px;
+    font-family: 'Spirax', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 8px;
+    
+    display: none;
+    
+    cursor: pointer;
+    
+    -webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    /*Raleway|Roboto|Shrikhand|Spirax|Slabo 27px|Indie Flower|Poor Story|Press Start 2P*/
+}
+
+#question:hover{
+    background-color: #ffffff;
+}
+
+#closehelp{
+    
+    font-size: 60px;
+    position: relative;
+    
+    left: 700;
+    
+    width: 1px;
+    height: 1px;
+    z-index: 1;
+    top: -40px;
+    
+    font-family: 'Spirax', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 8px;
+    
+    cursor: pointer;
+}
+
+#closehelp:hover{
+    color: red;
+}
+
+#help{
+    display: none;
+    
+    padding: 30px;
+    top: 20px;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, 0%);
+    
+    border-radius: 20px;
+    z-index:5;
+    
+    position: absolute;
+    background-color: white;
+    
+    border: 4px solid black;
+    
+    width: 800px;
+    
+    -webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 3px 3px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+#helptitle{
+    font-size: 30px;
+    float: left;
+    width: 600px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#helpcontent{
+    text-align: left;
+    top: -40;
+}
+
+#pipetty{
+    float: right;
+}
+
+#bubble{
+    z-index: 2;
+}
+
+#bubbletext{
+    position: relative;
+    top: -155;
+    width: 500px;
+    padding-left: 30px;
+    height: 60px;
+}
+
+#statusinfo{
+    padding-top: 20px;
+    padding-left: 30px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 60px auto;
+}
+
+#gifview{
+    padding-top: 10px;
+    padding-left: 0px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+}
+
+#jobinfoitem{
+    padding-top: 8px;
+}
+
+.gifview{
+    border: 1px solid black;
+}
+
+#helpfooter{
+    padding-top: 10px;
+    padding-left: 0px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+}
+
+#usercredentials{
+    top: 0px;
+    height: 14px;
+}

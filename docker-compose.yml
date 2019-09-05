@@ -1,0 +1,71 @@
+version: '3'
+services:
+  proxy:
+    image: maayanlab/proxy:1.1.0
+    environment:
+      nginx_proxy_02: "/charon(/.*) http://charon:5000/charon$$1"
+      nginx_proxy_03: "/elysium(/.*) http://elysium:5000/elysium$$1"
+    ports:
+      - 80:80
+      - 443:443
+
+  charon:
+    build: charon
+    image: charon
+    environment:
+      - ELYSIUM_USERNAME=${ELYSIUM_USERNAME}
+      - ELYSIUM_PASSWORD=${ELYSIUM_PASSWORD}
+      - DBHOST=mysql
+      - DBUSER=${MYSQL_USER}
+      - DBPASSWD=${MYSQL_ROOT_PASSWORD}
+      - DBNAME=${MYSQL_DATABASE}
+      - BUCKET=${BUCKET}
+      - API_SECRET=${API_SECRET}
+      - EXPIRATION_MINUTES=${EXPIRATION_MINUTES}
+      - MAXSIZE=${MAXSIZE}
+      - FILEAGE=${FILEAGE}
+      - AWSID=${AWS_ID}
+      - AWSKEY=${AWS_KEY}
+      - HOST_S3=${HOST_S3}
+      - ENTRY_POINT_CHARON=${ENTRY_POINT_CHARON}
+      - HOST_CHARON=${HOST_CHARON}
+    ports:
+      - 5001:5000
+
+  elysium:
+    build: elysium
+    image: elysium
+    environment:
+      - ELYSIUM_USERNAME=${ELYSIUM_USERNAME}
+      - ELYSIUM_PASSWORD=${ELYSIUM_PASSWORD}
+      - DBHOST=mysql
+      - DBUSER=${MYSQL_USER}
+      - DBPASSWD=${MYSQL_ROOT_PASSWORD}
+      - DBNAME=${MYSQL_DATABASE}
+      - HOST_CHARON=${HOST_CHARON}
+      - HOST_ELYSIUM=${HOST_ELYSIUM}
+      - ENTRY_POINT_CHARON=${ENTRY_POINT_CHARON}
+      - ENTRY_POINT_ELYSIUM=${ENTRY_POINT_ELYSIUM}
+      - API_SECRET=${API_SECRET}
+      - INSTANCESCALE=${INSTANCESCALE}
+      - MININSTANCES=${MININSTANCES}
+      - MAXINSTANCES=${MAXINSTANCES}
+      - AWSID=AI
+      - AWSKEY=AK
+      - BUCKET=${BUCKET}
+      - HOST_S3=${HOST_S3}
+    ports:
+      - 5000:5000
+
+  mysql:
+    build: mysql
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    ports:
+      - 3306:3306
+
